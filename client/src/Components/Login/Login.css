@@ -2,13 +2,17 @@
     --tea4: #2bb8b0;
 }
 
-.container{
+body {
+  overflow: hidden;  /* prevents scrolling */
+}
+.container{ /* styling for account box */
     display:flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 120px;
     background: white;
     padding-bottom: 30px;
+    width: 600px;
 
 }
 
@@ -21,13 +25,13 @@
     margin-top: 30px;
 
 }
-.text{
+.text{/* Login / Signup Text*/
     color: var(--tea4);
     font-size: 48px;
     font-weight: 700;
 
 }
-.underline{
+.underline{/* underline styling */
     width: 80px;
     height: 5px;
     background: var(--tea4);
@@ -35,7 +39,7 @@
 
 }
 
-.inputs{
+.inputs{ 
     margin-top: 55px;
     display: flex;
     flex-direction: column;
