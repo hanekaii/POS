@@ -18,12 +18,24 @@ def login():
     data = request.get_json()
     username = data.get("username")
     password = data.get("password")
+    
 
     if username in users and users[username] == password:
         return jsonify({"success": True, "message": "Login successful"})
     else:
         return jsonify({"success": False, "message": "Login failed"}), 401
 
+@app.route("/api/signup", methods=["POST"])
+def signup():
+    data = request.get_json()
+    username = data.get("username")
+    password = data.get("password")
+    password2 = data.get("password2")
+
+    if password != password2:
+        return jsonify({"success": False, "message": "Passwords Do Not Match!"}), 401
+    else: 
+        return jsonify({"success": True, "message": "Account Made!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
